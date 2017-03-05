@@ -11,7 +11,25 @@
     tools:context="com.meetandeat.meetandeat.MainActivity">
 
     <TextView
+        android:text="Homescreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:id="@+id/homescreenText"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textAppearance="@android:style/TextAppearance.Material.Medium"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center" />
+
+    <Button
+        android:text="Restaurant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/restaurantBtn"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="18dp"
+        android:onClick="onClick"/>
 </RelativeLayout>
+
