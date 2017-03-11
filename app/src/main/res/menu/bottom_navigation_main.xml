@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/action_messenger"
+        android:enabled="true"
+        android:title="Messenger"
+        android:icon="@drawable/ic_message_black_24dp"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/action_restaurants"
+        android:enabled="true"
+        android:title="Home"
+        android:icon="@drawable/ic_home_black_24dp"
+        app:showAsAction="ifRoom"
+        />
+    <item android:id="@+id/action_profiles"
+        android:enabled="true"
+        android:title="Profiles"
+        android:icon="@drawable/ic_face_black_24dp"
+        />
+</menu>
