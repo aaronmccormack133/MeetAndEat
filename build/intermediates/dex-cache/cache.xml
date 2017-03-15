@@ -88,7 +88,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="367dbb98481e1abb4bdd87743f05488b8605facc">
+        sha1="3aff195de541a506a0f1a8f9358e6fdd9abc2b31">
         <dex dex="C:\Users\Aaron\Documents\MeetAndEat - Copy\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_e00794cb14936b54cdb772ea833864a6abf61b52\classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ec057ffa1105884aa687e62eb484f9539a001521">
+        sha1="77730cc132bf95f03d3c281d7a9eed7ac23a2be8">
         <dex dex="C:\Users\Aaron\Documents\MeetAndEat - Copy\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5ff0f49b831a25293a01f3849a0b8f7734ab2263\classes.dex" />
     </item>
     <item
