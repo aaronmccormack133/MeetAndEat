@@ -13,15 +13,13 @@ import android.support.v4.app.Fragment;
  * Created by Aaron on 13/03/2017.
  */
 
-public class ProfileFragment extends Fragment {
+public class MessageFragment extends Fragment {
 
-    public ProfileFragment(){
+    public MessageFragment(){
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
-
-        return rootView;
+        return inflater.inflate(R.layout.fragment_message, container, false);
     }
 }
