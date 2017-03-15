@@ -13,6 +13,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
+//http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
+//https://github.com/1priyank1/BottomNavigation-Demo
+
 public class MainActivity extends AppCompatActivity {
 
     private TextView textProfiles;
@@ -65,16 +68,17 @@ public class MainActivity extends AppCompatActivity {
                                 fragment = new ProfileFragment();
                                 break;
                         }
-                        final FragmentTransaction transaction = fragmentManager.beginTransaction();
-                        transaction.replace(R.id.frame_fragmentholder, fragment).commit();
+                        final FragmentTransaction transaction =
+                                fragmentManager.beginTransaction();
+                                transaction
+                                        .setCustomAnimations(R.anim.left_entry_transition, R.anim.right_exit_transition, R.anim.right_entry_transition, R.anim.left_exit_transition)
+                                        .replace(R.id.frame_fragmentholder, fragment)
+                                        .commit();
                         return true;
                     }
                 }
         );
     }
-
-    //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
-
 
     public void onClick(View view){
         Intent i = new Intent(this, Restaurants.class);
