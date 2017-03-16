@@ -23,15 +23,12 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
         initializeControls();
         loginWithFB();
 
-
+        Intent i = getIntent();
     }
-
-    ;
 
 
     private void initializeControls() {

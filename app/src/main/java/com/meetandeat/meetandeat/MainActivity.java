@@ -13,7 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+
+import static com.meetandeat.meetandeat.R.id.button;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
@@ -22,9 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager myPager;
     BottomNavigationView bottomNavigationView;
     MenuItem prevMenuItem;
-    ProfileFragment profileFragment;
-    MessageFragment messageFragment;
-    HomeFragment homeFragment;
+    Button myButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
         );
-
+        //https://github.com/jaisonfdo/BottomNavigation
         myPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -83,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        myButton = (Button) findViewById(R.id.Button);
     }
 
     public class SamplePagerAdapter extends FragmentPagerAdapter {
@@ -109,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent i = new Intent(this, Restaurants.class);
+        Intent i = new Intent(this, Login.class);
         startActivity(i);
     }
 }

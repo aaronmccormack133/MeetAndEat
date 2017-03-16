@@ -19,4 +19,19 @@
         android:gravity="center_horizontal"
         tools:text="Calls Screen"/>
 
+    <TextView
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        />
+
+    <Button
+        android:text="Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/Button"
+        android:onClick="onClick"
+        />
+
 </FrameLayout>

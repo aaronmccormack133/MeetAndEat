@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.facebook.android\facebook-android-sdk\4.20.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb2ef781533c3f11c4e80341cbaebad275c66586">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.android-facebook-android-sdk-4.20.0_9e525ecf21980b227651f71149ec4d4f7e16fe63\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -12,12 +21,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\x15533283\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-applinks\1.4.0\8ad21bf21784dacce5f2043afb97218cc377e835\bolts-applinks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8ad21bf21784dacce5f2043afb97218cc377e835">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-applinks-1.4.0_9571a67bc05cf99085463f7006ae3799162669cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\MeetAndEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="81baf3ae35e75ed18d3d26694c66f22d7cfbad36">
+        sha1="cb0d732dc71d6ba13412baaec75e4c38647d5295">
         <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_adb56ec9a65e1bd8fee95fc9cbc36ba4c8644c92\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_585a72872c8519bac805a022fa0cc46aea66b4df\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -30,12 +57,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_3c3e9b2a2e4ee74bcdb402e938c046d003ebf2ad\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\design\25.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="ea6a989b83d19b1b461281e0475a6cd6514897f8">
         <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.2.0_9c56cd1a42ddad2b97718160c67093630ab81124\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_64b50d3834bfbcf62611cc6462f9236843e00da5\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -48,12 +93,48 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8a372c4191f80489770a231f7be4820b204b886a">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.0_de64740b7a61fee0363f809c14afa9197cbd9a36\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_83f1da3650aa03f7bcc12dedda9e7b43e39149a8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.2.0\support-annotations-25.2.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="4a5a82a027706397fff621b22fd6fa796e91d7c5">
         <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.2.0_9e24f7f490ed7547b7a2f62d633493984da9695f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_94354df2bae8195d5b09f03d49a5f504acd723c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\x15533283\.gradle\caches\modules-2\files-2.1\com.parse.bolts\bolts-tasks\1.4.0\d85884acf6810a3bbbecb587f239005cbc846dc4\bolts-tasks-1.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\bolts-tasks-1.4.0_952acc5ea2f8f257a020b124602cc0f1b21cd1cd\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -75,6 +156,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_a7c2262193c36013bfa8e7513f901649980cadb5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\MeetAndEat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -84,57 +174,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.2.0\jars\classes.jar"
+        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\customtabs\25.0.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="810f41e5b7fd99f196ebeabe865ba2c54e7e76dc">
-        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.2.0_585a72872c8519bac805a022fa0cc46aea66b4df\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cb454b52545859ed2f24a6c01366805b0fa04b22">
-        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.2.0_3c3e9b2a2e4ee74bcdb402e938c046d003ebf2ad\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="67eb33110dbacb46a48175b08ae0c96761d2c17d">
-        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.2.0_64b50d3834bfbcf62611cc6462f9236843e00da5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="8fe8a8f77d651982ce5e18f6187dc4daf914ac57">
-        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.2.0_83f1da3650aa03f7bcc12dedda9e7b43e39149a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="702d339bc0a81d21354cd7e2cf2b67225fa4a16c">
-        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.2.0_94354df2bae8195d5b09f03d49a5f504acd723c4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\MeetAndEat\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e820b7be8c035dd522da4bc822e8a76c8e27921a">
-        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.2.0_a7c2262193c36013bfa8e7513f901649980cadb5\classes.dex" />
+        sha1="94ba691efc31bf53264db0716d9c9ec03843ea31">
+        <dex dex="C:\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-customtabs-25.0.0_b413e310c89434d42c6a005896a6328a34456aca\classes.dex" />
     </item>
 
 </items>
