@@ -1,14 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        style="@style/Base.TextAppearance.AppCompat.Display1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|start"
-        android:text="Profile Screen"/>
 
     <TextView
         android:id="@+id/fragment_bottom_bar_text_activetab"
@@ -17,6 +11,26 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:gravity="center_horizontal"
-        tools:text="Calls Screen"/>
+        tools:text=""/>
+
+    <ImageView
+        android:layout_width="339dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/test_image_pic"
+        android:id="@+id/profilePic"
+        android:clickable="true"
+        android:layout_gravity="center_horizontal"
+        android:scaleType="center"/>
+
+    <TextView
+        android:text="John Doe"
+        android:id="@+id/profileNameText"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif"
+        android:layout_gravity="top"
+        android:elevation="5dp" />
 
 </FrameLayout>

@@ -1,14 +1,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/messanger">
 
     <TextView
         style="@style/Base.TextAppearance.AppCompat.Display1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="top|start"
-        android:text="Message Screen"/>
+        android:text=""/>
 
     <TextView
         android:id="@+id/fragment_bottom_bar_text_activetab"
@@ -17,6 +18,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:gravity="center_horizontal"
-        tools:text="Calls Screen"/>
+        tools:text=""/>
 
 </FrameLayout>

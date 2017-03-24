@@ -16,6 +16,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.facebook.CallbackManager;
+
 import static com.meetandeat.meetandeat.R.id.button;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/

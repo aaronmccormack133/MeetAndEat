@@ -11,20 +11,16 @@
         android:id="@+id/txtStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/login_button" />
+        android:layout_toEndOf="@+id/button" />
 
     <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/button"
+        android:layout_width="244dp"
         android:layout_height="wrap_content"
-
-        android:layout_marginBottom="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-
-
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        />
 
 </RelativeLayout>
