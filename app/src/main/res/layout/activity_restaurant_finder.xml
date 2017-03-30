@@ -19,14 +19,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/getRestPlace"
-        android:text="Restaurant Place"
+        android:text="Restaurant Name"
+        android:layout_below="@+id/getRestBtn"
+        android:layout_centerHorizontal="true"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/getRestAdd"
-        android:text="Restaurant Address"
+        android:layout_below="@+id/getRestPlace"
+        android:text="Restaurant Place"
+        android:layout_centerHorizontal="true"
         />
 
     <WebView

@@ -18,6 +18,8 @@ import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 
+//https://www.youtube.com/watch?v=hDXzW3J7Ul0 Reference
+
 public class restaurantFinder extends AppCompatActivity {
 
     TextView placeNameText;
@@ -83,7 +85,7 @@ public class restaurantFinder extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode == PLACE_PICKER_REQUEST){
-            if(requestCode == RESULT_OK){
+            if(resultCode == RESULT_OK){
                 Place place = PlacePicker.getPlace(restaurantFinder.this, data);
                 placeNameText.setText(place.getName());
                 placeAddressText.setText(place.getAddress());

@@ -30,13 +30,13 @@
             android:value="@string/app_id"></meta-data>
 
         <activity android:name=".restaurantFinder">
-            <meta-data
-                android:name="com.google.gms.version"
-                android:value="@integer/google_play_services_version"/>
-            <meta-data
-                android:name="com.google.android.geo.API_KEY"
-                android:value="AIzaSyBXbW4gRrQUqBu_Ywmv53RPbYU-wO1B4DA"/>
         </activity>
+        <meta-data
+            android:name="com.google.gms.version"
+            android:value="@integer/google_play_services_version"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCf6Pl5YGywPOHtaG8XmbpdlRMZeZbjJKk"/>
     </application>
 
 </manifest>
