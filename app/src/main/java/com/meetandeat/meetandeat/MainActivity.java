@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view){
-        Intent i = new Intent(this, Login.class);
+        Intent i = new Intent(this, restaurantFinder.class);
         startActivity(i);
     }
 }
