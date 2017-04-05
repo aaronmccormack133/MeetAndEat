@@ -23,20 +23,22 @@
             </intent-filter>
         </activity>
         <activity android:name=".Restaurants" />
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/app_id"></meta-data>
+            android:value="@string/app_id" />
 
-        <activity android:name=".restaurantFinder">
-        </activity>
+        <activity android:name=".restaurantFinder"></activity>
+
         <meta-data
             android:name="com.google.gms.version"
-            android:value="@integer/google_play_services_version"/>
+            android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCf6Pl5YGywPOHtaG8XmbpdlRMZeZbjJKk"/>
+            android:value="AIzaSyCf6Pl5YGywPOHtaG8XmbpdlRMZeZbjJKk" />
+
+        <activity android:name=".peopleSelection"></activity>
     </application>
 
 </manifest>

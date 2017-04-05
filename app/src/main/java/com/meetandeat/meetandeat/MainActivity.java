@@ -117,4 +117,9 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, restaurantFinder.class);
         startActivity(i);
     }
+
+    public void findSelection(View view){
+        Intent j = new Intent(this, peopleSelection.class);
+        startActivity(j);
+    }
 }
