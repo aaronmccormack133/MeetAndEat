@@ -660,21 +660,21 @@
     </item>
     <item
         is-multidex="true"
-        jar="/home/aaron/.android/build-cache/0e60f955bc42e9d78af809e7a1ba749f7d1ba786/output/jars/classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="c7626a9aa507bbbdc16188bc9a9f9bf3370c1ddd">
-        <dex dex="/home/aaron/Documents/MeetAndEat/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_68b20a0524943a7043546facd65d46d2b75ad594/classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="/home/aaron/Documents/MeetAndEat/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
         <dex dex="/home/aaron/Documents/MeetAndEat/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_aa89e9c244aa7b72b05c9605b1049625b7874d89/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/aaron/.android/build-cache/0e60f955bc42e9d78af809e7a1ba749f7d1ba786/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c7626a9aa507bbbdc16188bc9a9f9bf3370c1ddd">
+        <dex dex="/home/aaron/Documents/MeetAndEat/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_68b20a0524943a7043546facd65d46d2b75ad594/classes.dex" />
     </item>
     <item
         is-multidex="true"
