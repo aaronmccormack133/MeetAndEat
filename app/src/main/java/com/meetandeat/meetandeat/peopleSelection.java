@@ -21,9 +21,6 @@ public class peopleSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_people_selection);
 
-        //Puts test variables into the array to push them to the selection page
-        //String[] testString = {"John Doe", "Jane Doe", "Joe Bloggs", "Jane Bloggs", "Test Name"};
-        //String[] testString2 = {"Restaurant One", "Restaurant Two", "Restaurant Three", "Restaurant Four", "Restaurant Five"};
         //creates the adapter and puts the array into it
         ListAdapter peopleAdapter = new customListView(this, generateData());
         ListView peopleSelectionListView = (ListView) findViewById(R.id.peopleSelectionListView);
