@@ -10,15 +10,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 /**
  * Created by Aaron on 05/04/2017.
  */
 
-class customListView extends ArrayAdapter<String>{
+class customListView extends ArrayAdapter<listViewVariables>{
 
+    private final ArrayList<listViewVariables> arrayListItems;
 
-    public customListView(@NonNull Context context, String[] testString, String[] testString2) {
-        super(context, R.layout.custom_list_view, testString, testString2);
+    public customListView(@NonNull Context context, ArrayList<listViewVariables> arrayListItems) {
+        super(context, R.layout.custom_list_view, arrayListItems);
+
+        this.arrayListItems = arrayListItems;
     }//find out how to do 2 different textViews
 
 
@@ -29,13 +34,14 @@ class customListView extends ArrayAdapter<String>{
         LayoutInflater viewInflater = LayoutInflater.from(getContext());
         View customView = viewInflater.inflate(R.layout.custom_list_view, parent, false);
 
-        String singleTestItem = getItem(position);
+        //get the text views and the pictures from the view
         TextView nameDisplay = (TextView) customView.findViewById(R.id.nameDisplay);
         TextView restaurantDisplay = (TextView) customView.findViewById(R.id.restaurantDisplay);
         ImageView profilePictureDisplay = (ImageView) customView.findViewById(R.id.profilePictureDisplay);
 
-        nameDisplay.setText(singleTestItem);
-        restaurantDisplay.setText(nextTestItem);
+        //set the text views and the picture views
+        nameDisplay.setText(arrayListItems.get(position).getTestName());
+        restaurantDisplay.setText(arrayListItems.get(position).getTestRest());
         profilePictureDisplay.setImageResource(R.drawable.com_facebook_profile_picture_blank_portrait);
 
         return customView;
