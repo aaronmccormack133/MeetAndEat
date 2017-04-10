@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
                 onFblogin();
             }
         });
-        Intent i = new Intent();
+        Intent k = new Intent();
     }
 
     private void onFblogin(){

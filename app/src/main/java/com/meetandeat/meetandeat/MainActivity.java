@@ -122,4 +122,9 @@ public class MainActivity extends AppCompatActivity {
         Intent j = new Intent(this, peopleSelection.class);
         startActivity(j);
     }
+
+    public void loginBtn(View view) {
+        Intent k = new Intent(this, Login.class);
+        startActivity(k);
+    }
 }

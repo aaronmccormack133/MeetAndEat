@@ -24,7 +24,7 @@ class customListView extends ArrayAdapter<listViewVariables>{
         super(context, R.layout.custom_list_view, arrayListItems);
 
         this.arrayListItems = arrayListItems;
-    }//find out how to do 2 different textViews
+    }
 
 
 

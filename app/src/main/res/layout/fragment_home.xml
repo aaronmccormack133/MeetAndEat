@@ -24,6 +24,14 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="loginBtn"
+        android:text="Sign In Button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
+
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
