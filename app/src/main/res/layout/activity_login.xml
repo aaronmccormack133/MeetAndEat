@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Constraint xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.meetandeat.meetandeat.Login">
 
-    <TextView
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#ffffff"
+        android:hint="Password"
+        android:textAlignment="center"
+        android:textColorHint="#000000"
+        android:textSize="20sp"
+        android:layout_below="@+id/etUsername"
+        android:layout_alignStart="@+id/etUsername"
+        android:layout_marginTop="22dp" />
+
+    <EditText
         android:id="@+id/etUsername"
         android:layout_width="300dp"
         android:layout_height="50dp"
@@ -15,71 +28,61 @@
         android:textColorHint="#000000"
         android:textAlignment="center"
         android:textSize="20sp"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="240dp" />
-
-    <TextView
-        android:id="@+id/etPassword"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="#ffffff"
-        android:hint="Password"
-        android:textColorHint="#000000"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="310dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/bLogin"
-        android:layout_width="200dp"
+        style="@android:style/Widget.Material.Button.Borderless"
+        android:layout_width="150dp"
         android:layout_height="50dp"
-        android:background="#ffffff"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_below="@+id/etPassword"
+        android:layout_marginTop="14dp"
+        android:elevation="24dp"
         android:text="Login"
+        android:textAlignment="center"
         android:textColor="#000000"
-        app:layout_constraintBottom_toTopOf="@+id/tvRegisterHere"
-        app:layout_constraintTop_toBottomOf="@+id/etPassword"
-        app:layout_constraintVertical_bias="0.835"
-        tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="92dp" />
+        android:textSize="18dp" />
 
-    <TextView
+    <Button
         android:id="@+id/tvRegisterHere"
-        android:layout_width="112dp"
-        android:layout_height="31dp"
-        android:hint="Register Here"
-        android:text="Register Here!"
-        android:textColor="#ffffff"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="470dp"
-        tools:ignore="HardcodedText,MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="310dp"
-        android:layout_height="213dp"
-        app:srcCompat="@drawable/logo"
-        tools:layout_editor_absoluteX="37dp"
-        tools:layout_editor_absoluteY="6dp"
-        tools:ignore="ContentDescription,MissingConstraints" />
+        style="@android:style/Widget.Material.Button.Borderless"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/txtStatus"
+        android:layout_alignTop="@+id/bLogin"
+        android:layout_toEndOf="@+id/bLogin"
+        android:elevation="24dp"
+        android:onClick="openRegister"
+        android:text="Register"
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="18dp"
+        android:visibility="visible" />
 
     <TextView
         android:id="@+id/txtStatus"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_toEndOf="@+id/button"
-        tools:ignore="ObsoleteLayoutParam" />
+        android:layout_below="@+id/bLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/button"
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-        />
-    </Constraint>
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="310dp"
+        android:layout_height="213dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

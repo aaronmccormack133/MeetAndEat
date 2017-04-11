@@ -7,8 +7,17 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3a36eb5e1e1d60843a49d1448b0bd2f3bcd84eb9">
+        sha1="93e5b4ad7c8bb7b0e6aca37262aa765f8a8e7b8e">
         <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e06cbc33001ff92cf564988a67aed3c01ae1968e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\b1264a8ba6b738cc2f5b879072b161e2ebc95a35\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bf8e7d31850f30dbdeb58c35023577af0c2a0587\classes.dex" />
     </item>
     <item
         is-multidex="true"

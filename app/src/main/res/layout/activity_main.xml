@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
@@ -58,5 +58,5 @@
         android:layout_below="@+id/etUsername"
         android:layout_alignStart="@+id/bottom_navigation"
         android:layout_marginTop="133dp" />
-</ConstraintLayout>
+</RelativeLayout>
 

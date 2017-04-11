@@ -1,5 +1,6 @@
 package com.meetandeat.meetandeat;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -18,5 +19,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etPassword = (EditText) findViewById(R.id.etPassword);
 
         final Button bRegister = (Button) findViewById(R.id.bRegister);
+
+        Intent l = new Intent();
     }
 }

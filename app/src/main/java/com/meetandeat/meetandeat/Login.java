@@ -28,8 +28,6 @@ public class Login extends AppCompatActivity {
 
     private static CallbackManager callbackmanager;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,5 +107,10 @@ public class Login extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
         callbackmanager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void openRegister(View view){
+        Intent l = new Intent(this, RegisterActivity.class);
+        startActivity(l);
     }
 }
