@@ -18,19 +18,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:onClick="onClick"
+        android:onClick="restFinder"
         android:text="Find Restaurant"
         android:layout_below="@+id/pressButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="18dp" />
 
     <Button
+        android:id="@+id/logOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="loginBtn"
-        android:text="Sign In Button"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/selectionButton"
+        android:layout_marginTop="61dp"
+        android:onClick=""
+        android:text="Log Out" />
 
     <TextView
         android:id="@+id/welcomeText"

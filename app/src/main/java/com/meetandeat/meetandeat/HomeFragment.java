@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.support.v4.app.Fragment;
 
@@ -15,6 +16,7 @@ import android.support.v4.app.Fragment;
 
 public class HomeFragment extends Fragment {
 
+    private Button logOutBtn;
 
     public HomeFragment(){
     }
@@ -24,5 +26,6 @@ public class HomeFragment extends Fragment {
 
         View basicView =  inflater.inflate(R.layout.fragment_home, container, false);
         return basicView;
+
     }
 }

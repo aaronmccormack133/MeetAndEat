@@ -17,22 +17,38 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static com.meetandeat.meetandeat.R.id.button;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
 
-public class MainActivity extends AppCompatActivity {
-    ViewPager myPager;
-    BottomNavigationView bottomNavigationView;
-    MenuItem prevMenuItem;
-    Button myButton;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private ViewPager myPager;
+    private BottomNavigationView bottomNavigationView;
+    private MenuItem prevMenuItem;
+    private Button myButton;
+    private FirebaseAuth firebaseAuth;
+    private Button logOutBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Firebase
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser() == null){
+            startActivity(new Intent(this, Login.class));
+        }
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+
+        //Log Out Button
+        logOutBtn = (Button) findViewById(R.id.logOutBtn);
 
         //fragments
         myPager = (ViewPager) findViewById(R.id.Pager);
@@ -87,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        logOutBtn.setOnClickListener(this);
         myButton = (Button) findViewById(R.id.Button);
     }
 
@@ -113,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void onClick(View view){
+    public void restFinder(View view){
         Intent i = new Intent(this, restaurantFinder.class);
         startActivity(i);
     }
@@ -126,5 +143,13 @@ public class MainActivity extends AppCompatActivity {
     public void loginBtn(View view) {
         Intent k = new Intent(this, Login.class);
         startActivity(k);
+    }
+    @Override
+    public void onClick(View view){
+        if(view == logOutBtn){
+            firebaseAuth.signOut();
+            finish();
+            startActivity(new Intent(this, Login.class));
+        }
     }
 }

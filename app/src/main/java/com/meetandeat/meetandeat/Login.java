@@ -1,13 +1,17 @@
 package com.meetandeat.meetandeat;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -17,14 +21,25 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
 
-public class Login extends AppCompatActivity {
+public class Login extends AppCompatActivity implements View.OnClickListener {
+
     private Button fbbutton;
+    private Button bLogIn;
+    private EditText etUsername;
+    private EditText etPassword;
+    private Button registerBtn;
+    private ProgressDialog progressDialog;
+    private FirebaseAuth firebaseAuth;
 
     private static CallbackManager callbackmanager;
 
@@ -34,12 +49,20 @@ public class Login extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
 
-        final EditText etUsername = (EditText) findViewById(R.id.etUsername);
-        final EditText etPassword = (EditText) findViewById(R.id.etPassword);
-        final Button bLogin = (Button) findViewById(R.id.bLogin);
-        final TextView registerLink = (TextView) findViewById(R.id.tvRegisterHere);
+        progressDialog = new ProgressDialog(this);
 
-        registerLink.setOnClickListener(new View.OnClickListener() {
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() != null){
+            //start the main activity
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        }
+
+        EditText etUsername = (EditText) findViewById(R.id.etUsername);
+        EditText etPassword = (EditText) findViewById(R.id.etPassword);
+        Button bLogin = (Button) findViewById(R.id.bLogin);
+        Button registerBtn = (Button) findViewById(R.id.registerBtn);
+
+        registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent registerIntent = new Intent(Login.this, RegisterActivity.class);
@@ -49,12 +72,16 @@ public class Login extends AppCompatActivity {
 
         fbbutton = (Button) findViewById(R.id.button);
 
+        //Facebook Button onClickListener
         fbbutton.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 onFblogin();
             }
         });
         Intent k = new Intent();
+
+        //LogIn and Register Button onClickListener
+        bLogin.setOnClickListener(this);
     }
 
     private void onFblogin(){
@@ -103,6 +130,36 @@ public class Login extends AppCompatActivity {
                     }
                 });
     }
+
+    private void userLogin(){
+        String email = etUsername.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
+
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this, "Please enter a valid emial address", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Please enter a valid password", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        progressDialog.setMessage("Logging you in, please wait");
+        progressDialog.show();
+
+        firebaseAuth.signInWithEmailAndPassword(email,password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
+
+                        if(task.isSuccessful()){
+                            //start the main activiity
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        }
+                    }
+                });
+    }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -112,5 +169,10 @@ public class Login extends AppCompatActivity {
     public void openRegister(View view){
         Intent l = new Intent(this, RegisterActivity.class);
         startActivity(l);
+    }
+
+    @Override
+    public void onClick(View view) {
+
     }
 }
