@@ -15,19 +15,23 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 //Reference: https://www.youtube.com/watch?v=0NFwF7L-YA8
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button bRegister;
-    //private EditText etAge;
-    //private EditText etName;
-    //private EditText etUsername;
+    private EditText etAge;
+    private EditText etName;
+    private EditText etUsername;
     private EditText etPassword;
     private EditText etEmail;
     private ProgressDialog progressBar;
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +41,11 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         progressBar = new ProgressDialog(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        //EditText etAge = (EditText) findViewById(R.id.etAge);
-        //EditText etName = (EditText) findViewById(R.id.etName);
-        //EditText etUsername = (EditText) findViewById(R.id.etUsername);
+        etAge = (EditText) findViewById(R.id.etAge);
+        etName = (EditText) findViewById(R.id.etName);
+        etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
         etEmail = (EditText) findViewById(R.id.etEmail);
 
@@ -54,9 +59,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private void registerUser(){
         String email = etEmail.getText().toString().trim();
         String password = etPassword.getText().toString().trim();
-        //String age = etAge.getText().toString();
-        //String username = etUsername.getText().toString().trim();
-        //String name = etName.getText().toString().trim();
+        String age = etAge.getText().toString();
+        String username = etUsername.getText().toString().trim();
+        String name = etName.getText().toString().trim();
 
         if(TextUtils.isEmpty(email)){
             //email is empty
@@ -66,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if(TextUtils.isEmpty(password)){
             Toast.makeText(this, "Please enter a password", Toast.LENGTH_SHORT).show();
             return;
-        }/*
+        }
         if(TextUtils.isEmpty(age)){
             Toast.makeText(this, "Please enter your age", Toast.LENGTH_SHORT).show();
             return;
@@ -78,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this, "Please enter your name", Toast.LENGTH_SHORT).show();
             return;
-        }*/
+        }
         progressBar.setMessage("Registering User...");
         progressBar.show();
         firebaseAuth.createUserWithEmailAndPassword(email,password)
@@ -98,8 +103,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 });
     }
 
+    private void setUserInformation(){
+        String name = etName.getText().toString().trim();
+        String userName = etUsername.getText().toString().trim();
+        int age = Integer.parseInt(etAge.getText().toString().trim());
+
+        UserInformation userInfo = new UserInformation(name, userName, age);
+
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        databaseReference.child(user.getUid()).setValue(userInfo);
+    }
+
     @Override
     public void onClick(View view){
         registerUser();
+        setUserInformation();
     }
 }
