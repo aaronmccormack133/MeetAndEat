@@ -25,7 +25,7 @@ import static com.meetandeat.meetandeat.R.id.button;
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private ViewPager myPager;
     private BottomNavigationView bottomNavigationView;
     private MenuItem prevMenuItem;
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        logOutBtn.setOnClickListener(this);
+        //logOutBtn.setOnClickListener(this);
         myButton = (Button) findViewById(R.id.Button);
     }
 
@@ -144,12 +144,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Intent k = new Intent(this, Login.class);
         startActivity(k);
     }
-    @Override
-    public void onClick(View view){
-        if(view == logOutBtn){
-            firebaseAuth.signOut();
-            finish();
-            startActivity(new Intent(this, Login.class));
-        }
+    public void logOutBtn(View view){
+        firebaseAuth.signOut();
+        finish();
+        startActivity(new Intent(this, Login.class));
     }
 }

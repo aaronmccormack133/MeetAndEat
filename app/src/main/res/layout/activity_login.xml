@@ -44,6 +44,7 @@
         android:elevation="24dp"
         android:text="Login"
         android:textAlignment="center"
+        android:onClick="logInClick"
         android:textColor="#000000"
         android:textSize="18dp" />
 

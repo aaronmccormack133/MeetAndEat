@@ -31,7 +31,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/selectionButton"
         android:layout_marginTop="61dp"
-        android:onClick=""
+        android:onClick="logOutBtn"
         android:text="Log Out" />
 
     <TextView

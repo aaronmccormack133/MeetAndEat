@@ -31,7 +31,7 @@ import org.json.JSONObject;
 
 import java.util.Arrays;
 
-public class Login extends AppCompatActivity implements View.OnClickListener {
+public class Login extends AppCompatActivity {
 
     private Button fbbutton;
     private Button bLogIn;
@@ -54,13 +54,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() != null){
             //start the main activity
+            finish();
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
         }
 
-        EditText etUsername = (EditText) findViewById(R.id.etUsername);
-        EditText etPassword = (EditText) findViewById(R.id.etPassword);
-        Button bLogin = (Button) findViewById(R.id.bLogin);
-        Button registerBtn = (Button) findViewById(R.id.registerBtn);
+        etUsername = (EditText) findViewById(R.id.etUsername);
+        etPassword = (EditText) findViewById(R.id.etPassword);
+        bLogIn = (Button) findViewById(R.id.bLogin);
+        registerBtn = (Button) findViewById(R.id.registerBtn);
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +82,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Intent k = new Intent();
 
         //LogIn and Register Button onClickListener
-        bLogin.setOnClickListener(this);
+        //bLogIn.setOnClickListener(this);
     }
 
     private void onFblogin(){
@@ -154,6 +155,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                         if(task.isSuccessful()){
                             //start the main activiity
+                            finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         }
                     }
@@ -171,8 +173,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         startActivity(l);
     }
 
-    @Override
-    public void onClick(View view) {
-
+    public void logInClick(View view) {
+        userLogin();
     }
 }
