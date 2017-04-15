@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(k);
     }
     public void logOutBtn(View view){
-        firebaseAuth.signOut();
+        firebaseAuth.getInstance().signOut();
         finish();
         startActivity(new Intent(this, Login.class));
     }

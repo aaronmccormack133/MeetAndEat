@@ -122,6 +122,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View view){
         registerUser();
-        setUserInformation();
+        //setUserInformation();
     }
 }

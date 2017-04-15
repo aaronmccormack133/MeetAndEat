@@ -3,12 +3,57 @@
 
     <item
         is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-android\2.5.2\f19f10d6276aa0b380e2d05d2ab3272d693a5433\firebase-client-android-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f19f10d6276aa0b380e2d05d2ab3272d693a5433">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\firebase-client-android-2.5.2_85b3a812d68068c3bc779d3d777c975e322230be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.firebase\tubesock\0.0.12\6ec0bbd3e161a73ed672284b587fd32309a86d7a\tubesock-0.0.12.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\tubesock-0.0.12_aeccdf7d9dd08f0a7f3836ad39e05bfa9af92aea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="93e5b4ad7c8bb7b0e6aca37262aa765f8a8e7b8e">
+        sha1="7d436413ec3e306abb612158b782fc569a809974">
         <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e06cbc33001ff92cf564988a67aed3c01ae1968e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-jvm\2.5.2\91731b8f5868a3e8a8a773f29b8d06b5c358f5bb\firebase-client-jvm-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="91731b8f5868a3e8a8a773f29b8d06b5c358f5bb">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\firebase-client-jvm-2.5.2_9c559d6e6b9c5336f5c6c7ef836868b0de902048\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.2.2\285cb9c666f0f0f3dd8a1be04e1f457eb7b15113\jackson-annotations-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.2.2_39e497caf98544cc46c2a28c877d32c3baf111f0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.2.2\3c8f6018eaa72d43b261181e801e6f8676c16ef6\jackson-databind-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.2.2_f5cc6746d2cadc3840586e7a3cc8f0a929054cb7\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -18,6 +63,15 @@
         revision="25.0.2"
         sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
         <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bf8e7d31850f30dbdeb58c35023577af0c2a0587\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.2.2\d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b\jackson-core-2.2.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.2.2_d0989d9712a1b0325f8a0b16958f1eb8b6cad811\classes.dex" />
     </item>
     <item
         is-multidex="true"

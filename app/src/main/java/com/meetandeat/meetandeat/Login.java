@@ -13,23 +13,29 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
-import com.facebook.GraphRequest;
-import com.facebook.GraphResponse;
-import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
+import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.gms.wallet.FullWallet;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Arrays;
+
+//Facebook firebase auth: http://androidbash.com/firebase-classic-email-login-facebook-login-android/
 
 public class Login extends AppCompatActivity {
 
@@ -40,13 +46,14 @@ public class Login extends AppCompatActivity {
     private Button registerBtn;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+    private FirebaseAuth.AuthStateListener firebaseAuthListen;
+    Firebase firebaseRef = new Firebase("https://meet-and-eat-163108.firebaseio.com/");
 
     private static CallbackManager callbackmanager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_login);
 
         progressDialog = new ProgressDialog(this);
@@ -71,65 +78,61 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        fbbutton = (Button) findViewById(R.id.button);
+        LoginButton fbbutton = (LoginButton) findViewById(R.id.button);
 
         //Facebook Button onClickListener
-        fbbutton.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                onFblogin();
+        firebaseAuth = FirebaseAuth.getInstance();
+
+        FirebaseUser mUser = firebaseAuth.getCurrentUser();
+        if(mUser != null){
+            //User is signed in
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            String uid = firebaseAuth.getCurrentUser().getUid();
+            String image = firebaseAuth.getCurrentUser().getPhotoUrl().toString();
+            intent.putExtra("user_id", uid);
+            if(image!=null || image != ""){
+                intent.putExtra("profile_picture", image);
+            }
+            startActivity(intent);
+            finish();
+        }
+
+        firebaseAuthListen = new FirebaseAuth.AuthStateListener(){
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
+                FirebaseUser mUser = firebaseAuth.getCurrentUser();
+                if(mUser != null){
+                    //user is signed in
+                }
+                else{
+                    //user is signed out
+                }
+            }
+        };
+
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        callbackmanager = CallbackManager.Factory.create();
+        fbbutton.setReadPermissions("email", "public_profile");
+        fbbutton.registerCallback(callbackmanager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                signInWithFacebook(loginResult.getAccessToken());
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+
             }
         });
         Intent k = new Intent();
 
         //LogIn and Register Button onClickListener
         //bLogIn.setOnClickListener(this);
-    }
-
-    private void onFblogin(){
-        callbackmanager = CallbackManager.Factory.create();
-
-        LoginManager.getInstance().logInWithReadPermissions(this, Arrays.asList("email", "user_photos", "public_profile"));
-
-        LoginManager.getInstance().registerCallback(callbackmanager,
-                new FacebookCallback<LoginResult>() {
-                    @Override
-                    public void onSuccess(LoginResult loginResult) {
-                        System.out.println("Success");
-                        GraphRequest.newMeRequest(
-                                loginResult.getAccessToken(), new GraphRequest.GraphJSONObjectCallback(){
-                                    @Override
-                                    public void onCompleted(JSONObject json, GraphResponse response){
-                                        if(response.getError() != null){
-                                            System.out.println("Error");
-                                        }
-                                        else{
-                                            System.out.println("Success");
-                                            try{
-                                                String jsonresult = String.valueOf(json);
-                                                System.out.println("JSON Result:"+jsonresult);
-                                                String str_email = json.getString("email");
-                                                String str_id = json.getString("id");
-                                                String str_firstname = json.getString("first_name");
-                                                String str_lastname = json.getString("last_name");
-                                            }
-                                            catch(JSONException e){
-                                                e.printStackTrace();
-                                            }
-                                        }
-                                    }
-                                }).executeAsync();
-                    }
-
-                    @Override
-                    public void onCancel() {
-
-                    }
-
-                    @Override
-                    public void onError(FacebookException error) {
-
-                    }
-                });
     }
 
     private void userLogin(){
@@ -168,6 +171,33 @@ public class Login extends AppCompatActivity {
         callbackmanager.onActivityResult(requestCode, resultCode, data);
     }
 
+    private void signInWithFacebook(AccessToken token){
+        AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
+
+        firebaseAuth.signInWithCredential(credential)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(!task.isSuccessful()){
+                            Toast.makeText(Login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                        }
+                        else{
+                            String uid = task.getResult().getUser().getUid();
+                            String name = task.getResult().getUser().getDisplayName();
+                            String email = task.getResult().getUser().getEmail();
+                            String image = task.getResult().getUser().getPhotoUrl().toString();
+                            User user = new User(uid, name, email, null);
+                            firebaseRef.child(uid).setValue(user);
+
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.putExtra("user_id", uid);
+                            intent.putExtra("profile_picture", image);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
+    }
     public void openRegister(View view){
         Intent l = new Intent(this, RegisterActivity.class);
         startActivity(l);

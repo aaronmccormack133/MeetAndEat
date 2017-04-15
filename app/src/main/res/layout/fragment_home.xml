@@ -20,31 +20,27 @@
         android:layout_gravity="center"
         android:onClick="restFinder"
         android:text="Find Restaurant"
-        android:layout_below="@+id/pressButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp" />
+        android:layout_marginBottom="29dp"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:id="@+id/logOutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/selectionButton"
-        android:layout_marginTop="61dp"
         android:onClick="logOutBtn"
-        android:text="Log Out" />
+        android:text="Log Out"
+        android:layout_marginTop="26dp"
+        android:layout_below="@+id/selectionButton"
+        android:layout_alignEnd="@+id/pressButton" />
 
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:elevation="5dp"
+        android:layout_centerHorizontal="true"
         android:text="Welcome to Meet And Eat"
-        android:textAppearance="@android:style/TextAppearance.Material.Large"
-        tools:layout_gravity="top|center_horizontal"
-        android:layout_below="@+id/fragment_bottom_bar_text_activetab"
-        android:layout_centerHorizontal="true" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
     <TextView
         android:id="@+id/pressButton"
@@ -54,16 +50,14 @@
         android:textAlignment="center"
         android:textAppearance="@android:style/TextAppearance.Material.Small"
         android:textSize="16dp"
-        android:visibility="visible"
-        android:layout_marginTop="43dp"
-        android:layout_below="@+id/welcomeText"
-        android:layout_centerHorizontal="true" />
+        android:layout_above="@+id/Button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="To find people with similar tastes press this button!"
-
         android:id="@+id/textView"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
@@ -74,8 +68,8 @@
         android:id="@+id/selectionButton"
         android:text="Find People"
         android:onClick="findSelection"
-        android:layout_marginTop="16dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
 
 </RelativeLayout>
