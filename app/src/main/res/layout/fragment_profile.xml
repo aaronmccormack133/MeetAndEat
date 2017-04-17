@@ -25,6 +25,15 @@
                 android:src="@drawable/test_image"
                 tools:ignore="ContentDescription"/>
 
+            <Button
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:text="Edit"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:onClick="openEdit"
+                />
+
             <ImageButton
                 android:id="@+id/user_profile_photo"
                 android:layout_width="120dp"

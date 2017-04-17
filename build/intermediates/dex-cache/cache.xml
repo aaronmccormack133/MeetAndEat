@@ -3,84 +3,318 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-android\2.5.2\f19f10d6276aa0b380e2d05d2ab3272d693a5433\firebase-client-android-2.5.2.jar"
+        jar="C:\Users\Aaron\.android\build-cache\8616461f72b888d64417de08ff5e96c5169bda5f\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="f19f10d6276aa0b380e2d05d2ab3272d693a5433">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\firebase-client-android-2.5.2_85b3a812d68068c3bc779d3d777c975e322230be\classes.dex" />
+        sha1="a10ed1f1cff990ef081263ad33f13dc6c207eb4e">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_fa6aeab9f3c63e5a55c28f77dcd4ce5987e4fd4d\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.firebase\tubesock\0.0.12\6ec0bbd3e161a73ed672284b587fd32309a86d7a\tubesock-0.0.12.jar"
+        jar="C:\Users\Aaron\.android\build-cache\e01a6db27a79e2315c606f8495a356def5bc8aa4\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6ec0bbd3e161a73ed672284b587fd32309a86d7a">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\tubesock-0.0.12_aeccdf7d9dd08f0a7f3836ad39e05bfa9af92aea\classes.dex" />
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3a52ec3e7c660adaaa9f8cb34b461c6102ce7ae8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Aaron\.android\build-cache\e8eb86d2393dd7315df67ef0c3f19459aaece900\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="7d436413ec3e306abb612158b782fc569a809974">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_e06cbc33001ff92cf564988a67aed3c01ae1968e\classes.dex" />
+        sha1="cf8c0b6ec17f059cf61ecd101296e16c38562196">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f68932b4fd442c969e4a804047cb93ec20b0afec\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.firebase\firebase-client-jvm\2.5.2\91731b8f5868a3e8a8a773f29b8d06b5c358f5bb\firebase-client-jvm-2.5.2.jar"
+        jar="C:\Users\Aaron\.android\build-cache\4bd9b5c7e7184a7f115cde9ba3ce5f5bab1b7743\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="91731b8f5868a3e8a8a773f29b8d06b5c358f5bb">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\firebase-client-jvm-2.5.2_9c559d6e6b9c5336f5c6c7ef836868b0de902048\classes.dex" />
+        sha1="9d5ae39b0de30b0f73c815513024feff3542f36e">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_7f8bcc775506b36d1cb6d81f8d4718ab21f8cebb\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.2.2\285cb9c666f0f0f3dd8a1be04e1f457eb7b15113\jackson-annotations-2.2.2.jar"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="285cb9c666f0f0f3dd8a1be04e1f457eb7b15113">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.2.2_39e497caf98544cc46c2a28c877d32c3baf111f0\classes.dex" />
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_037281bf1384acbe54713079a4bd54b5c025d5db\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.2.2\3c8f6018eaa72d43b261181e801e6f8676c16ef6\jackson-databind-2.2.2.jar"
+        jar="C:\Users\Aaron\.android\build-cache\f0d8ce9e73cc342defd0006311cf7a614191da8e\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="3c8f6018eaa72d43b261181e801e6f8676c16ef6">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.2.2_f5cc6746d2cadc3840586e7a3cc8f0a929054cb7\classes.dex" />
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5b14007330975833ee55751c15a5218ea8f41167\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.android\build-cache\b1264a8ba6b738cc2f5b879072b161e2ebc95a35\output\jars\classes.jar"
+        jar="C:\Users\Aaron\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_bf8e7d31850f30dbdeb58c35023577af0c2a0587\classes.dex" />
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.3.1_e4649d22ebaeea537d6c8b95b701df3f52368bcf\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.2.2\d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b\jackson-core-2.2.2.jar"
+        jar="C:\Users\Aaron\.android\build-cache\e0261eac292da0abcbff73eb7b1b86620cac3668\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="d20be6a5ddd6f8cfd36ebf6dea329873a1c41f1b">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.2.2_d0989d9712a1b0325f8a0b16958f1eb8b6cad811\classes.dex" />
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_15997127770f43b85252a3bc882f140c2974b6bf\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Aaron\.android\build-cache\ff645826b81d5b987766667a44df78567789851e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f17fd926a29300d48c32208e9260fa13f39882ed\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_c7ab1254e127416db1070b0ab6dfa6645c3cdd66\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.6.1_a47b643b3deacf6b19ec66943829089b68b0cae3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\36d5851b1d8e99930e485d44293ba96d099c1303\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f3c5134853eff11ad374c8782bf79090258d5cc7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.twitter\twitter-text\1.13.0\78415b95ae3184c5926d593feab64bfc0b73b2dd\twitter-text-1.13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="78415b95ae3184c5926d593feab64bfc0b73b2dd">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\twitter-text-1.13.0_f710a7cb2dde8f90ab04097835d1fed0d29cdd84\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\76a1262fca00230f05546a8f0b1a64bbc8aee3bf\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_990e2709959f81324ee1318ee098d3d2e19780a6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\b3a1fec0d88f13fa22d787d3079f46239ca6958f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a482b4c9a888b289dde90602226f27f25f2723af\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a7f1671e631c5dc3cbaf3c1293d369ae5233b7b3">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_a1c182fb5d129e352b65881ba6f56cfbc2e782b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\dde058de6d82577fa17e7bf534cc14101eb9a227\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ad4a3cd76854c47bd915d1e21a314749aa01b44a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\17982738ff9f8c06766980ed7ca81dcd0e831aa1\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_197b5ad916c567844a34a2447ec989d4097320fd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\e2f1a6f36b6a291d48ebd8f52b2859698d116de3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f5bcd9cbfeedc58f493339841a7c5d0347a39f0b">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_def7e7c9d92ad3b07db0f79d2f423add3b8e85ac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="C:\Users\Aaron\Documents\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_f2c0cd8165e4494bbf2302fdb831e8c69d9b5e3b\classes.dex" />
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_31e0bd8c91a370bd5fab0172ba8e0a8540ec39b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\bc691c62b66bf50e558298bdbc101e6f2a889aa0\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7308fa2037dac339ea04b90cdd17e87f835ea294">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_293496ba8b06d24598d85c8305fae224b4d2185b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\2347acee3bc0d8a16cb4214ae799485492bd3f5d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_1a4f7aa1843c4fb9b890842a35f56b8c79dca3a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\f784abbce13ae51cbd5f9cf67af6d7213ffa5506\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a8ae156c2726ac9c56daaf4b49452ec2cdb7bba9">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cc0f7a18cd944cd4c17dadcf21f28ebdc1e43ae6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\bdbfb6b5b8571d2c2eea0a1e6f50f863ad388a85\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="343ad59d9fb3bbf6ab99baafad859eb4b0fecc02">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_614b0e18a7aef8934ce2c4befec32a341169bc82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_ef1d0b380b877e447297a353eb838a44df3bf2cb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.2\43eeae0b9fb087bb3194ba59ab63a38a32fbf3e\retrofit-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="043eeae0b9fb087bb3194ba59ab63a38a32fbf3e">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.2_0dae93c7ea5b2d08a8adcc6832a0868dcb67e56a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_0c058bf43cf2d05ceb48b315382169cd5b8ba9e7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\ff3cea253af0e32ad6f4cb56d7ff0243ef83b60d\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_419419a8276dfca49e0415d52beaf7d7d4a1e2ec\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\f83a14be9bbaa024bea6ebc5647d1fbc502ea440\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a85a2f50198cb8ce8e110cc2c5b1a8245bb23482\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\dda6283e6aa2614dde56d0e731cf5e6c8d14919a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1395232a7eddc612029353b3c953cb0fced71076">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c79d8c85e655a8a5aa05ac52f0a3c153cfe6cfcd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\c327233015cb4dab413ae491c0b453d30c3a4386\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8bdf5cd702d3d860cd85783a776c26605f557882">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_64dd40e57a3ab56ec80efa5012edea9bb8d60094\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.2\f8d87f15b94b8d74e7ccf61d7eedb558811cdb30\converter-gson-2.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f8d87f15b94b8d74e7ccf61d7eedb558811cdb30">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.2_5ebb5b9d344d5c3a54dd1ce6bda6eecafb566a8e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\b53377df189c76eb8bcbfa1d54e6c7a7064fe855\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b58dc2cb5e85a0a1bad172bfae7992804c002193\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\8babb78a5b5660830ebb33e7748b93911c847021\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="895c63ba9782b04f0c5da69205216f6ec87119eb">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9f5807c71bcff49d75c0ef4ced8d4291a1be4f5a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Aaron\.android\build-cache\b62618de8f67b4a8940132c5e96691ce5207323a\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0558e5b6c171bd6719581340f9ac6be4af5ae265">
+        <dex dex="C:\Users\Aaron\Documents\MeetAndEat(1)\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_90abde48ab76034cb95f715c1376be709b0cadd7\classes.dex" />
     </item>
 
 </items>

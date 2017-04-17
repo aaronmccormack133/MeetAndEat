@@ -14,13 +14,22 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import static com.meetandeat.meetandeat.R.id.button;
+import static com.meetandeat.meetandeat.R.id.name;
+import static com.meetandeat.meetandeat.R.id.profilePictureDisplay;
+import static com.meetandeat.meetandeat.R.id.user_profile_name;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
@@ -30,8 +39,11 @@ public class MainActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
     private MenuItem prevMenuItem;
     private Button myButton;
-    private FirebaseAuth firebaseAuth;
     private Button logOutBtn;
+    //Get the Image from facebook to display on the profile
+    private ImageButton user_profile_photo;
+    private Firebase firebaseRef;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Firebase
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseRef = new Firebase("https://meet-and-eat-163108.firebaseio.com/");
 
         if(firebaseAuth.getCurrentUser() == null){
             startActivity(new Intent(this, Login.class));
@@ -107,6 +120,28 @@ public class MainActivity extends AppCompatActivity {
         myButton = (Button) findViewById(R.id.Button);
     }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+        String uid = getIntent().getExtras().getString("user_id");
+        String imageurl = getIntent().getExtras().getString("profile_picture");
+
+        new ImageLoadTask(imageurl, profilePictureDisplay).execute();
+
+        firebaseRef.child(uid).child("name").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String data = dataSnapshot.getValue(String.class);
+                user_profile_name.setText(data);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Toast.makeText(getApplicationContext(), ""+firebaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }//Stopped Here, Line 86 on website
+
     public class SamplePagerAdapter extends FragmentPagerAdapter {
         public SamplePagerAdapter(FragmentManager fragM) {
             super(fragM);
@@ -148,5 +183,9 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth.getInstance().signOut();
         finish();
         startActivity(new Intent(this, Login.class));
+    }
+    public void openEdit(View view){
+        Intent l = new Intent(this, EditProfileActivity.class);
+        startActivity(l);
     }
 }

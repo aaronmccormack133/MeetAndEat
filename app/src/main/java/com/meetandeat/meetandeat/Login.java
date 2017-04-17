@@ -159,7 +159,7 @@ public class Login extends AppCompatActivity {
                         if(task.isSuccessful()){
                             //start the main activiity
                             finish();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), EditProfileActivity.class));
                         }
                     }
                 });
@@ -189,7 +189,7 @@ public class Login extends AppCompatActivity {
                             User user = new User(uid, name, email, null);
                             firebaseRef.child(uid).setValue(user);
 
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), EditProfileActivity.class);
                             intent.putExtra("user_id", uid);
                             intent.putExtra("profile_picture", image);
                             startActivity(intent);

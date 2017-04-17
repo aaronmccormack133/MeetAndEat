@@ -30,17 +30,19 @@
         android:layout_height="wrap_content"
         android:onClick="logOutBtn"
         android:text="Log Out"
-        android:layout_marginTop="26dp"
-        android:layout_below="@+id/selectionButton"
-        android:layout_alignEnd="@+id/pressButton" />
+        android:layout_marginBottom="59dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:id="@+id/welcomeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:text="Welcome to Meet And Eat"
-        android:textAppearance="@android:style/TextAppearance.Material.Large" />
+        android:textAppearance="@android:style/TextAppearance.Material.Large"
+        android:layout_below="@+id/fragment_bottom_bar_text_activetab"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="29dp" />
 
     <TextView
         android:id="@+id/pressButton"
