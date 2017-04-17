@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.meetandeat.meetandeat">
+          package="com.meetandeat.meetandeat">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <uses-feature
         android:glEsVersion="0x00020000"
-        android:required="true" />
+        android:required="true"/>
 
     <application
         android:name=".customApplication"
@@ -16,31 +16,34 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Restaurants" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".Restaurants"/>
         <activity android:name=".Login">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".UserAreaActivity"></activity>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".UserAreaActivity"/>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/app_id" />
+            android:value="@string/app_id"/>
 
-        <activity android:name=".restaurantFinder"></activity>
+        <activity android:name=".restaurantFinder"/>
 
         <meta-data
             android:name="com.google.gms.version"
-            android:value="@integer/google_play_services_version" />
+            android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCf6Pl5YGywPOHtaG8XmbpdlRMZeZbjJKk" />
+            android:value="AIzaSyCf6Pl5YGywPOHtaG8XmbpdlRMZeZbjJKk"/>
 
-        <activity android:name=".peopleSelection"></activity>
+        <activity android:name=".peopleSelection"/>
+        <activity android:name=".EditProfileActivity">
+        </activity>
     </application>
 
 </manifest>
