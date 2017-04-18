@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
     private Button myButton;
     private Button logOutBtn;
     //Get the Image from facebook to display on the profile
+    private TextView user_profile_name;
+    private String name;
+    private TextView user_profile_short_bio;
+    private String bio;
+    private TextView user_profile_age;
+    private String age;
     private ImageButton user_profile_photo;
     private Firebase firebaseRef;
     private FirebaseAuth firebaseAuth;
@@ -135,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         myButton = (Button) findViewById(R.id.Button);
 
         //Profile Spinner
+        /*
         final String [] arr = {"Test", "Test2"};
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.fragment_profile, arr);
@@ -151,7 +158,23 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        } );
+        } );*/
+
+        //Setting the name, bio and age to the profile.
+        //Email Edit
+        user_profile_name = (TextView) findViewById(R.id.user_profile_name);
+        user_profile_short_bio = (TextView) findViewById(R.id.user_profile_short_bio);
+        user_profile_age = (TextView) findViewById(R.id.user_profile_age);
+
+        //Not Working
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("Name");
+        user_profile_name.setText(name);
+        String age = intent.getStringExtra("Age");
+        user_profile_age.setText(age);
+        String bio = intent.getStringExtra("Bio");
+        user_profile_short_bio.setText(bio);
+
     }
 
     public class SamplePagerAdapter extends FragmentPagerAdapter {

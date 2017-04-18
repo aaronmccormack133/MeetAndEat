@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
 
         FirebaseUser mUser = firebaseAuth.getCurrentUser();
-        if(mUser != null){
+        /*if(mUser != null){
             //User is signed in
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             String uid = firebaseAuth.getCurrentUser().getUid();
@@ -97,7 +97,7 @@ public class Login extends AppCompatActivity {
             }
             startActivity(intent);
             finish();
-        }
+        }*/
 
         firebaseAuthListen = new FirebaseAuth.AuthStateListener(){
             @Override

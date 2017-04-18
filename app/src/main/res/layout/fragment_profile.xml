@@ -38,6 +38,16 @@
                 android:scaleType="centerCrop"
                 tools:ignore="ContentDescription"/>
 
+            <ImageButton
+                android:id="@+id/openEditActivity"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:src="@drawable/ic_build_white_24dp"
+                android:onClick="openEdit"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
             <RelativeLayout
                 android:id="@+id/profile_layout"
                 android:layout_width="match_parent"
@@ -56,7 +66,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="76dp"
-                    android:text="Zak O'Leary"
+                    android:text=""
                     android:textColor="#fff"
                     android:textSize="24sp"
                     android:textStyle="bold"
@@ -69,10 +79,20 @@
                     android:layout_below="@+id/user_profile_name"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="12dp"
-                    android:text="Computing student, NCI"
+                    android:text=""
                     android:textColor="#fff"
                     android:textSize="14sp"
                     tools:ignore="HardcodedText"/>
+
+                <TextView
+                    android:id="@+id/user_profile_age"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+
+                    android:layout_alignTop="@+id/user_profile_name"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="42dp" />
+
             </RelativeLayout>
 
 
