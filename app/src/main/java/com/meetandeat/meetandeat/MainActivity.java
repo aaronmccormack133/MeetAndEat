@@ -1,6 +1,9 @@
 package com.meetandeat.meetandeat;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,8 +16,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +32,12 @@ import com.firebase.client.ValueEventListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+import static com.facebook.FacebookSdk.getApplicationContext;
 import static com.meetandeat.meetandeat.R.id.button;
 import static com.meetandeat.meetandeat.R.id.name;
 import static com.meetandeat.meetandeat.R.id.profilePictureDisplay;
@@ -44,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton user_profile_photo;
     private Firebase firebaseRef;
     private FirebaseAuth firebaseAuth;
+    //Spinner
+    Spinner spinner;
+    ArrayAdapter <CharSequence> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,29 +133,26 @@ public class MainActivity extends AppCompatActivity {
 
         //logOutBtn.setOnClickListener(this);
         myButton = (Button) findViewById(R.id.Button);
+
+        //Profile Spinner
+        final String [] arr = {"Test", "Test2"};
+        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.fragment_profile, arr);
+        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource( this,R.array.Hobbies,android.R.layout.simple_spinner_item );
+        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText( getApplicationContext(),parent.getItemAtPosition(position)+"selected", Toast.LENGTH_LONG ).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        } );
     }
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        String uid = getIntent().getExtras().getString("user_id");
-        String imageurl = getIntent().getExtras().getString("profile_picture");
-
-        new ImageLoadTask(imageurl, profilePictureDisplay).execute();
-
-        firebaseRef.child(uid).child("name").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String data = dataSnapshot.getValue(String.class);
-                user_profile_name.setText(data);
-            }
-
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                Toast.makeText(getApplicationContext(), ""+firebaseError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }//Stopped Here, Line 86 on website
 
     public class SamplePagerAdapter extends FragmentPagerAdapter {
         public SamplePagerAdapter(FragmentManager fragM) {

@@ -19,30 +19,6 @@ import static com.facebook.FacebookSdk.getApplicationContext;
  */
 
 public class ProfileFragment extends Fragment {
-    Spinner spinner;
-    ArrayAdapter <CharSequence> adapter;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState){
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.ProfileFragment);
-        spinner = (Spinner)findViewById(R.id.spinner);
-        adapter = ArrayAdapter.createFromResource( this,R.array.select_hobbies,android.R.layout.simple_spinner_item );
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner.setAdapter( adapter );
-        spinner.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText( getApplicationContext(),parent.getItemAtPosition(position)+"selected", Toast.LENGTH_LONG ).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        } );
-
-    }
 
     public ProfileFragment(){
     }

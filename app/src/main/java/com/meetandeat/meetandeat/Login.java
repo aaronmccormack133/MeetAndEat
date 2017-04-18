@@ -18,6 +18,8 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.firebase.client.Firebase;
@@ -115,8 +117,30 @@ public class Login extends AppCompatActivity {
         fbbutton.setReadPermissions("email", "public_profile");
         fbbutton.registerCallback(callbackmanager, new FacebookCallback<LoginResult>() {
             @Override
-            public void onSuccess(LoginResult loginResult) {
+            public void onSuccess(final LoginResult loginResult) {
                 signInWithFacebook(loginResult.getAccessToken());
+                GraphRequest request = GraphRequest.newMeRequest(
+                        loginResult.getAccessToken(),
+                        new GraphRequest.GraphJSONObjectCallback(){
+                            @Override
+                            public void onCompleted(JSONObject object, GraphResponse response){
+                                try{
+                                    String name = object.getString("name").toString();
+                                    String profilePicture = "https://graph.facebook.com/"+loginResult.getAccessToken().getUserId()+"/picture?type=large";
+                                    Log.d("Image", profilePicture);
+                                    Log.d("Name", name);
+                                }
+                                catch (Exception e){
+                                    e.printStackTrace();
+                                }
+                                finish();
+                            }
+                        }
+                );
+                Bundle parameters = new Bundle();
+                parameters.putString("fields","name, profilePicture");
+                request.setParameters(parameters);
+                request.executeAsync();
             }
 
             @Override
