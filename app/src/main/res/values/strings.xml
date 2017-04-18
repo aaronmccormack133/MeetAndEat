@@ -4,7 +4,19 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="text_messenger"/>
-    <string name="text_home"/>
-    <string name="text_profiles"/>
+    <string name="text_messenger" />
+    <string name="text_home" />
+    <string name="text_profiles" />
+    <string name="select_hobbies">Select hobbies </string>
+
+    <string-array name="Hobbies">
+
+        <item> Music </item>
+        <item> Sports </item>
+        <item> Art </item>
+        <item> Deirdre </item>
+        <item> Yvonne </item>
+
+    </string-array>
+
 </resources>
