@@ -1,9 +1,6 @@
 package com.meetandeat.meetandeat;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -16,32 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.facebook.CallbackManager;
-import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-import java.io.InputStream;
-import java.lang.reflect.Array;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-import static com.facebook.FacebookSdk.getApplicationContext;
-import static com.meetandeat.meetandeat.R.id.button;
-import static com.meetandeat.meetandeat.R.id.name;
-import static com.meetandeat.meetandeat.R.id.profilePictureDisplay;
-import static com.meetandeat.meetandeat.R.id.user_profile_name;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
@@ -65,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     //Spinner
     Spinner spinner;
     ArrayAdapter <CharSequence> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,6 +120,18 @@ public class MainActivity extends AppCompatActivity {
 
         //logOutBtn.setOnClickListener(this);
         myButton = (Button) findViewById(R.id.Button);
+
+
+        //new spinner test
+        Spinner mySpinner = (Spinner) findViewById( R.id.spinner1 );
+        ArrayAdapter<String> myAdapter = new ArrayAdapter<>( MainActivity.this,
+                android.R.layout.simple_list_item_1, getResources().getStringArray( R.array.hobbies) );
+        myAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
+        mySpinner.setAdapter( myAdapter );
+
+
+
+
 
         //Profile Spinner
         /*
