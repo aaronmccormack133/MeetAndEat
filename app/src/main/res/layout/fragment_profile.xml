@@ -43,6 +43,16 @@
             android:scaleType="centerCrop"
             tools:ignore="ContentDescription"/>
 
+        <ImageButton
+            android:id="@+id/openEditActivity"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@null"
+            android:src="@drawable/ic_build_white_24dp"
+            android:onClick="openEdit"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
 
         <RelativeLayout
             android:id="@+id/profile_layout"
