@@ -13,11 +13,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
@@ -26,7 +28,7 @@ import com.google.firebase.auth.FirebaseUser;
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private ViewPager myPager;
     private BottomNavigationView bottomNavigationView;
     private MenuItem prevMenuItem;
@@ -43,14 +45,24 @@ public class MainActivity extends AppCompatActivity {
     private Firebase firebaseRef;
     private FirebaseAuth firebaseAuth;
     //Spinner
-    Spinner spinner;
-    ArrayAdapter <CharSequence> adapter;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+        // Create an ArrayAdapter using the string array and a default spinner layout
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.hobbies_array, android.R.layout.simple_spinner_item);
+        // Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener( this );
 
         //Firebase
         firebaseAuth = FirebaseAuth.getInstance();
@@ -121,14 +133,14 @@ public class MainActivity extends AppCompatActivity {
         //logOutBtn.setOnClickListener(this);
         myButton = (Button) findViewById(R.id.Button);
 
-
+        /*
         //new spinner test
         Spinner mySpinner = (Spinner) findViewById( R.id.spinner1 );
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>( MainActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray( R.array.hobbies) );
         myAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
         mySpinner.setAdapter( myAdapter );
-
+        /*
 
 
 
@@ -215,5 +227,16 @@ public class MainActivity extends AppCompatActivity {
     public void openEdit(View view){
         Intent l = new Intent(this, EditProfileActivity.class);
         startActivity(l);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
+        String sSelected=parent.getItemAtPosition(pos).toString();
+        Toast.makeText( this,sSelected,Toast.LENGTH_SHORT ).show();
+
+    }
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
     }
 }

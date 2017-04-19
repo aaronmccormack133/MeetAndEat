@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string-array name="hobbies_array">
+
+        <item> Sports</item>
+        <item> Art   </item>
+        <item> Work  </item>
+        <item> Food  </item>
+
+    </string-array>
+    
+</resources>
