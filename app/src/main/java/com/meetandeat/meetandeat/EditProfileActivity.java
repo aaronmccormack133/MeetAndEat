@@ -19,10 +19,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
-public class EditProfileActivity extends AppCompatActivity {
-    private EditText user_profile_name;
-    private EditText user_profile_age;
-    private EditText user_profile_short_bio;
+public class EditProfileActivity extends AppCompatActivity implements View.OnClickListener {
+    private EditText user_profile_name_edit;
+    private EditText user_profile_age_edit;
+    private EditText user_profile_short_bio_edit;
     private ImageButton submitDetailBtn;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -36,19 +36,20 @@ public class EditProfileActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        user_profile_age = (EditText) findViewById(R.id.user_profile_age);
-        user_profile_name = (EditText) findViewById(R.id.user_profile_name);
-        user_profile_short_bio = (EditText) findViewById(R.id.user_profile_short_bio);
+        user_profile_age_edit = (EditText) findViewById(R.id.user_profile_age_edit);
+        user_profile_name_edit = (EditText) findViewById(R.id.user_profile_name_edit);
+        user_profile_short_bio_edit = (EditText) findViewById(R.id.user_profile_short_bio_edit);
 
         submitDetailBtn = (ImageButton) findViewById(R.id.submitDetailsBtn);
+        submitDetailBtn.setOnClickListener(this);
 
         Intent l = new Intent();
     }
 
     private void checkUserDetails(){
-        String age = user_profile_age.getText().toString().trim();
-        String name = user_profile_name.getText().toString().trim();
-        String bio = user_profile_short_bio.getText().toString();
+        String age = user_profile_age_edit.getText().toString().trim();
+        String name = user_profile_name_edit.getText().toString().trim();
+        String bio = user_profile_short_bio_edit.getText().toString();
 
         if(TextUtils.isEmpty(age)){
             Toast.makeText(this, "Please enter your age!", Toast.LENGTH_SHORT).show();
@@ -67,11 +68,11 @@ public class EditProfileActivity extends AppCompatActivity {
     }
 
     private void setUserInformation(){
-        String age = user_profile_age.getText().toString().trim();
-        String name = user_profile_name.getText().toString().trim();
-        String bio = user_profile_short_bio.getText().toString().trim();
+        String userInfoName = user_profile_name_edit.getText().toString().trim();
+        String userInfoAge = user_profile_age_edit.getText().toString().trim();
+        String userInfoBio = user_profile_short_bio_edit.getText().toString().trim();
 
-        UserInformation userInfo = new UserInformation(name, age, bio);
+        UserInformation userInfo = new UserInformation(userInfoName, userInfoAge, userInfoBio);
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
         databaseReference.child(user.getUid()).setValue(userInfo)
@@ -85,5 +86,10 @@ public class EditProfileActivity extends AppCompatActivity {
 
     public void setDetails(View view){
         checkUserDetails();
+    }
+
+    @Override
+    public void onClick(View v) {
+        setUserInformation();
     }
 }

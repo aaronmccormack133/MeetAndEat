@@ -25,6 +25,7 @@ import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private ImageButton user_profile_photo;
     private Firebase firebaseRef;
     private FirebaseAuth firebaseAuth;
+    private DatabaseReference databaseReference;
     //Spinner
 
 
