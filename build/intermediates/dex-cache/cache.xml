@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\x15022030\MeetAndEat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Aaron\Documents\testFolder\MeetAndEat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
-        <dex dex="C:\Users\x15022030\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9d8f6cb486c7782c76fd2d98710e9ef779327b2a\classes.dex" />
+        <dex dex="C:\Users\Aaron\Documents\testFolder\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_c8ebd1e1d5a4478f094987c1987970c61cc57cd9\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\x15022030\MeetAndEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Aaron\Documents\testFolder\MeetAndEat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c03db34ca5d633d712853babd152ac586738bf00">
-        <dex dex="C:\Users\x15022030\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_0701024b2421bf55332b30e6bae0f81ff5d202fd\classes.dex" />
+        sha1="f698ae89a979c18c0cd545cb0190353f8d6fa3fa">
+        <dex dex="C:\Users\Aaron\Documents\testFolder\MeetAndEat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_94f063b98721ef064a891a1511ef832958cbf297\classes.dex" />
     </item>
 
 </items>

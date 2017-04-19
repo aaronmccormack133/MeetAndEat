@@ -21,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -60,9 +61,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Specify the layout to use when the list of choices appears
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
-        spinner.setAdapter(adapter);
+//        spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener( this );
+//        spinner.setOnItemSelectedListener( this );
 
         //Firebase
         firebaseAuth = FirebaseAuth.getInstance();
@@ -170,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         user_profile_name = (TextView) findViewById(R.id.user_profile_name);
         user_profile_short_bio = (TextView) findViewById(R.id.user_profile_short_bio);
         user_profile_age = (TextView) findViewById(R.id.user_profile_age);
-
+/*
         //Not Working
         Intent intent = getIntent();
         String name = intent.getStringExtra("Name");
@@ -179,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         user_profile_age.setText(age);
         String bio = intent.getStringExtra("Bio");
         user_profile_short_bio.setText(bio);
-
+*/
     }
 
     public class SamplePagerAdapter extends FragmentPagerAdapter {
@@ -214,13 +215,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         Intent j = new Intent(this, peopleSelection.class);
         startActivity(j);
     }
-
-    public void loginBtn(View view) {
-        Intent k = new Intent(this, Login.class);
-        startActivity(k);
-    }
     public void logOutBtn(View view){
         firebaseAuth.getInstance().signOut();
+        LoginManager.getInstance().logOut();
         finish();
         startActivity(new Intent(this, Login.class));
     }
