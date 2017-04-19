@@ -15,24 +15,30 @@
 
     <Button
         android:id="@+id/Button"
+        style="@android:style/Widget.Material.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/textView"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
+        android:layout_marginBottom="29dp"
+        android:elevation="0dp"
         android:onClick="restFinder"
         android:text="Find Restaurant"
-        android:layout_marginBottom="29dp"
-        android:layout_above="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:textAppearance="@android:style/TextAppearance.Material.Button" />
 
     <Button
         android:id="@+id/logOutBtn"
+        style="@android:style/Widget.Material.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:elevation="0dp"
         android:onClick="logOutBtn"
         android:text="Log Out"
-        android:layout_marginBottom="59dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="@android:style/TextAppearance.Material.Button" />
 
     <TextView
         android:id="@+id/welcomeText"
@@ -65,13 +71,16 @@
         android:layout_centerHorizontal="true" />
 
     <Button
+        android:id="@+id/selectionButton"
+        style="@android:style/Widget.Material.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/selectionButton"
-        android:text="Find People"
-        android:onClick="findSelection"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp" />
+        android:layout_marginTop="12dp"
+        android:elevation="0dp"
+        android:onClick="findSelection"
+        android:text="Find People"
+        android:textAppearance="@android:style/TextAppearance.Material.Button" />
 
 </RelativeLayout>
