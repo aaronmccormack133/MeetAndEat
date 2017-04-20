@@ -24,7 +24,8 @@
         android:onClick="restFinder"
         android:text="Find Restaurant"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        tools:ignore="HardcodedText"/>
 
     <Button
         android:id="@+id/logOutBtn"
@@ -34,7 +35,8 @@
         android:text="Log Out"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"/>
+        android:layout_alignParentStart="true"
+        tools:ignore="HardcodedText"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -45,7 +47,8 @@
         android:layout_below="@+id/imageView2"
         android:layout_alignStart="@+id/Button"
         android:layout_marginTop="51dp"
-        android:layout_alignEnd="@+id/Button"/>
+        android:layout_alignEnd="@+id/Button"
+        tools:ignore="HardcodedText"/>
 
     <ImageView
         android:id="@+id/imageView2"
@@ -54,6 +57,7 @@
         app:srcCompat="@drawable/logo"
         android:layout_alignBottom="@+id/Button"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="28dp"/>
+        android:layout_marginBottom="28dp"
+        tools:ignore="ContentDescription"/>
 
 </RelativeLayout>
