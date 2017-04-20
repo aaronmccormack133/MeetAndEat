@@ -127,19 +127,19 @@
                 android:id="@+id/secondButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/firstButton"
-                android:layout_alignStart="@+id/fourthButton"
                 android:onClick="buttonOnClick"
-                android:text="Button"/>
+                android:text="Button"
+                android:layout_above="@+id/firstButton"
+                android:layout_alignStart="@+id/fourthButton" />
 
             <Button
                 android:id="@+id/thirdButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
                 android:onClick="buttonOnClick"
-                android:text="Button"/>
+                android:text="Button"
+                android:layout_above="@+id/secondButton"
+                android:layout_centerHorizontal="true" />
 
             <Button
                 android:id="@+id/fourthButton"
