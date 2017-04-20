@@ -59,17 +59,18 @@
 
     <Button
         android:id="@+id/registerBtn"
-        style="@android:style/Widget.Material.Button.Borderless"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless"
         android:layout_width="150dp"
         android:layout_height="50dp"
+
         android:layout_alignEnd="@+id/imageView"
         android:layout_alignTop="@+id/bLogin"
         android:background="#fff"
         android:elevation="24dp"
-        android:fontFamily="sans-serif"
         android:onClick="openRegister"
         android:text="Register"
         android:textAlignment="center"
+        android:textAppearance="@android:style/TextAppearance.Material.Button"
         android:textSize="18dp"
         tools:ignore="HardcodedText,SpUsage" />
 

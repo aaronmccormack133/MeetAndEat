@@ -14,12 +14,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.Profile;
+import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.firebase.client.Firebase;
@@ -41,7 +44,7 @@ import java.util.Arrays;
 
 public class Login extends AppCompatActivity {
 
-    private Button fbbutton;
+    private LoginButton fbbutton;
     private Button bLogIn;
     private EditText etUsername;
     private EditText etPassword;
@@ -51,12 +54,16 @@ public class Login extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener firebaseAuthListen;
     Firebase firebaseRef = new Firebase("https://meet-and-eat-163108.firebaseio.com/");
 
-    private static CallbackManager callbackmanager;
+    private CallbackManager callbackmanager = null;
+    private AccessTokenTracker mTracker = null;
+    private ProfileTracker mProfileTracker = null;
+    public static final String PARCEL_KEY = "parcel_key";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        callbackmanager = CallbackManager.Factory.create();
 
         progressDialog = new ProgressDialog(this);
 
@@ -69,9 +76,9 @@ public class Login extends AppCompatActivity {
 
         etUsername = (EditText) findViewById(R.id.etUsername);
         etPassword = (EditText) findViewById(R.id.etPassword);
-        bLogIn = (Button) findViewById(R.id.bLogin);
-        registerBtn = (Button) findViewById(R.id.registerBtn);
-
+        //bLogIn = (Button) findViewById(R.id.bLogin);
+        //registerBtn = (Button) findViewById(R.id.registerBtn);
+/*
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,26 +86,29 @@ public class Login extends AppCompatActivity {
                 Login.this.startActivity(registerIntent);
             }
         });
-
-        LoginButton fbbutton = (LoginButton) findViewById(R.id.button);
-
+*/
+        fbbutton = (LoginButton) findViewById(R.id.button);
+        fbbutton.registerCallback(callbackmanager, callback);
+        fbbutton.setReadPermissions("user_friends");
         //Facebook Button onClickListener
         firebaseAuth = FirebaseAuth.getInstance();
 
-        FirebaseUser mUser = firebaseAuth.getCurrentUser();
-        /*if(mUser != null){
+        //FirebaseUser mUser = firebaseAuth.getCurrentUser();
+        //if(mUser != null){
+/*
             //User is signed in
-            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            Intent fbIntent = new Intent(getApplicationContext(), MainActivity.class);
             String uid = firebaseAuth.getCurrentUser().getUid();
-            String image = firebaseAuth.getCurrentUser().getPhotoUrl().toString();
-            intent.putExtra("user_id", uid);
-            if(image!=null || image != ""){
-                intent.putExtra("profile_picture", image);
+            String profileImage = firebaseAuth.getCurrentUser().getPhotoUrl().toString();
+            fbIntent.putExtra("user_id", uid);
+            if(profileImage!=null || profileImage!=""){
+                fbIntent.putExtra("profile_picture", profileImage);
             }
-            startActivity(intent);
+            startActivity(fbIntent);
             finish();
-        }*/
-
+*/
+        //}
+/*
         firebaseAuthListen = new FirebaseAuth.AuthStateListener(){
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth){
@@ -111,54 +121,27 @@ public class Login extends AppCompatActivity {
                 }
             }
         };
-
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        callbackmanager = CallbackManager.Factory.create();
-        fbbutton.setReadPermissions("email", "public_profile");
-        fbbutton.registerCallback(callbackmanager, new FacebookCallback<LoginResult>() {
+*/
+        mTracker = new AccessTokenTracker() {
             @Override
-            public void onSuccess(final LoginResult loginResult) {
-                signInWithFacebook(loginResult.getAccessToken());
-                GraphRequest request = GraphRequest.newMeRequest(
-                        loginResult.getAccessToken(),
-                        new GraphRequest.GraphJSONObjectCallback(){
-                            @Override
-                            public void onCompleted(JSONObject object, GraphResponse response){
-                                try{
-                                    String name = object.getString("name").toString();
-                                    String profilePicture = "https://graph.facebook.com/"+loginResult.getAccessToken().getUserId()+"/picture?type=large";
-                                    Log.d("Image", profilePicture);
-                                    Log.d("Name", name);
-                                }
-                                catch (Exception e){
-                                    e.printStackTrace();
-                                }
-                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                finish();
-
-                            }
-                        }
-                );
-                Bundle parameters = new Bundle();
-                parameters.putString("fields","name, profilePicture");
-                request.setParameters(parameters);
-                request.executeAsync();
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                Log.v("AccessTokenTracker", "oldAccessToken" +oldAccessToken+"||"+"Current Access Token"+currentAccessToken);
             }
-
+        };
+        mProfileTracker = new ProfileTracker() {
             @Override
-            public void onCancel() {
-
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                Log.v("Session Tracker", "oldProfile: "+oldProfile+"||"+"Current Profile"+currentProfile);
+                ProfileFragment(currentProfile);
             }
-
-            @Override
-            public void onError(FacebookException error) {
-
-            }
-        });
+        };
+        mProfileTracker.startTracking();
+        mTracker.startTracking();
         Intent k = new Intent();
 
         //LogIn and Register Button onClickListener
         //bLogIn.setOnClickListener(this);
+
     }
 
     private void userLogin(){
@@ -191,6 +174,25 @@ public class Login extends AppCompatActivity {
                 });
     }
 
+    FacebookCallback<LoginResult> callback = new FacebookCallback<LoginResult>() {
+        @Override
+        public void onSuccess(LoginResult loginResult) {
+            Profile profile = Profile.getCurrentProfile();
+            ProfileFragment(profile);
+            signInWithFacebook(loginResult.getAccessToken());
+        }
+
+        @Override
+        public void onCancel() {
+
+        }
+
+        @Override
+        public void onError(FacebookException error) {
+
+        }
+    };
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         super.onActivityResult(requestCode, resultCode, data);
@@ -198,6 +200,7 @@ public class Login extends AppCompatActivity {
     }
 
     private void signInWithFacebook(AccessToken token){
+
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
 
         firebaseAuth.signInWithCredential(credential)
@@ -208,22 +211,30 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                         }
                         else{
-                            /*
-                            String uid = task.getResult().getUser().getUid();
-                            String name = task.getResult().getUser().getDisplayName();
-                            String email = task.getResult().getUser().getEmail();
-                            //String image = task.getResult().getUser().getPhotoUrl().toString();
-                            User user = new User(uid, name, email, null);
-                            firebaseRef.child(uid).setValue(user);
-                            */
+                            String fbUID = task.getResult().getUser().getUid();
+                            String fbName = task.getResult().getUser().getDisplayName();
+                            String fbEmail = task.getResult().getUser().getEmail();
+
+                            User user = new User(fbUID, fbName, fbEmail, null);
+                            firebaseRef.child(fbUID).setValue(user);
+
                             Intent intent = new Intent(getApplicationContext(), EditProfileActivity.class);
-                            //intent.putExtra("user_id", uid);
-                            //intent.putExtra("profile_picture", image);
+                            intent.putExtra("user_id", fbUID);
+
                             startActivity(intent);
                             finish();
                         }
                     }
                 });
+    }
+
+    private void ProfileFragment(Profile profile){
+        if(profile!=null){
+            Bundle fbBundle = new Bundle();
+            fbBundle.putParcelable(PARCEL_KEY, profile);
+            ProfileFragment pf = new ProfileFragment();
+            pf.setArguments(fbBundle);
+        }
     }
     public void openRegister(View view){
         Intent l = new Intent(this, RegisterActivity.class);
@@ -232,5 +243,26 @@ public class Login extends AppCompatActivity {
 
     public void logInClick(View view) {
         userLogin();
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        mTracker.stopTracking();
+        mProfileTracker.stopTracking();
+    }
+
+    public boolean isLoggedIn(){
+        AccessToken accessToken = AccessToken.getCurrentAccessToken();
+        return accessToken != null;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        if(isLoggedIn()){
+            Profile profile = Profile.getCurrentProfile();
+            ProfileFragment(profile);
+        }
     }
 }

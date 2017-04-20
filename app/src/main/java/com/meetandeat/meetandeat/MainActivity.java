@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity{
     private DatabaseReference myRef;
     private FirebaseDatabase mFirebaseDatabase;
     private String userID;
-    //Spinner
+
 
 
 
@@ -163,9 +163,10 @@ public class MainActivity extends AppCompatActivity{
             uInfo.setUserInfoBio(ds.child(userID).getValue(UserInformation.class).getUserInfoBio());
             uInfo.setUserInfoName(ds.child(userID).getValue(UserInformation.class).getUserInfoName());
 
-            Log.d(TAG, "showData: name: "+uInfo.getUserInfoName());
             Log.d(TAG, "showData: age: "+uInfo.getUserInfoAge());
             Log.d(TAG, "showData: bio: "+uInfo.getUserInfoBio());
+            Log.d(TAG, "showData: name: "+uInfo.getUserInfoName());
+
 
             user_profile_age.setText(uInfo.getUserInfoAge());
             user_profile_short_bio.setText(uInfo.getUserInfoBio());
@@ -173,42 +174,70 @@ public class MainActivity extends AppCompatActivity{
         }
     }
 /*
-    @Override
-    public void onStart(){
-        super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
+    public void defineButtons(){
+
+        findViewById( R.id.firstButton).setOnClickListener( buttonClickListener );
+        findViewById( R.id.secondButton ).setOnClickListener( buttonClickListener );
+        findViewById( R.id.thirdButton ).setOnClickListener( buttonClickListener );
+        findViewById( R.id.fourthButton ).setOnClickListener( buttonClickListener);
+
     }
+*/
+
+/*
+    private View.OnClickListener buttonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.firstButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+                case R.id.secondButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+                case R.id.thirdButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+                case R.id.fourthButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+            }
+
+        }
+    };
+    */
+
 
     @Override
-    public void onStop(){
+    public void onStop() {
         super.onStop();
-        if(mAuthListener!=null){
+        if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }
-*/
-    public class SamplePagerAdapter extends FragmentPagerAdapter {
-        public SamplePagerAdapter(FragmentManager fragM) {
-            super(fragM);
-        }
 
-        @Override
-        public Fragment getItem(int position) {
-            if (position == 0) {
-                return new MessageFragment();
+        public class SamplePagerAdapter extends FragmentPagerAdapter {
+            public SamplePagerAdapter(FragmentManager fragM) {
+                super(fragM);
+            }
 
-            } else if (position == 1) {
-                return new HomeFragment();
-            } else {
-                return new ProfileFragment();
+            @Override
+            public Fragment getItem(int position) {
+                if (position == 0) {
+                    return new MessageFragment();
+
+                } else if (position == 1) {
+                    return new HomeFragment();
+                } else {
+                    return new ProfileFragment();
+                }
+            }
+
+            @Override
+            public int getCount() {
+                return 3;
             }
         }
-
-        @Override
-        public int getCount() {
-            return 3;
-        }
-    }
 
     public void restFinder(View view){
         Intent i = new Intent(this, restaurantFinder.class);
