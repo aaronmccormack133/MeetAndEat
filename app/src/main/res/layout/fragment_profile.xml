@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    </ScrollView>
+
 
 
     <ImageView
@@ -47,11 +47,11 @@
             android:id="@+id/openEditActivity"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:background="@null"
-            android:src="@drawable/ic_build_white_24dp"
-            android:onClick="openEdit"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+            android:background="@null"
+            android:onClick="openEdit"
+            android:src="@drawable/ic_build_white_24dp"/>
 
 
         <RelativeLayout
@@ -66,15 +66,7 @@
             android:paddingBottom="24dp">
 
 
-            <TextView
-                android:id="@+id/user_profile_age"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginBottom="84dp"
-                android:layout_marginEnd="35dp" />
-
-            <TextView
+            <EditText
                 android:id="@+id/user_profile_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +78,7 @@
                 android:textStyle="bold"
                 tools:ignore="HardcodedText"/>
 
-            <TextView
+            <EditText
                 android:id="@+id/user_profile_short_bio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -102,28 +94,47 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true">
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true">
 
-            <EditText
-                android:id="@+id/lblTitle"
+
+            <Button
+                android:id="@+id/firstButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="142dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Hobbies"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"/>
+                android:layout_above="@+id/fourthButton"
+                android:layout_alignEnd="@+id/secondButton"
+                android:layout_alignStart="@+id/secondButton"
+                android:onClick="buttonOnClick"
+                android:text="next activity"/>
 
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/secondButton"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignTop="@+id/lblTitle"
-                android:layout_marginTop="79dp"/>
+                android:layout_above="@+id/firstButton"
+                android:layout_alignStart="@+id/fourthButton"
+                android:onClick="buttonOnClick"
+                android:text="Button"/>
+
+            <Button
+                android:id="@+id/thirdButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="buttonOnClick"
+                android:text="Button"/>
+
+            <Button
+                android:id="@+id/fourthButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/thirdButton"
+                android:layout_marginBottom="42dp"
+                android:onClick="buttonOnClick"
+                android:text="Button"/>
 
         </RelativeLayout>
 

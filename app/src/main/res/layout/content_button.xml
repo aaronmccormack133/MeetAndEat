@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/test_image"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.meetandeat.meetandeat.buttonActivity">
+
+
+    <Button
+        android:id="@+id/hikingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Hiking"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="-1dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/gamesbtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Computer Games"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="49dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/musicBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Music"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="99dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/socialBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Socializing"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="149dp"/>
+
+    <Button
+        android:id="@+id/cookingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Cooking"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="199dp"/>
+
+    <Button
+        android:id="@+id/campingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Camping"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="49dp"/>
+
+    <Button
+        android:id="@+id/dancingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Dancing"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="99dp"/>
+
+    <Button
+        android:id="@+id/writingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Writing"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="149dp"/>
+
+    <Button
+        android:id="@+id/paintingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Painting"
+        tools:layout_editor_absoluteX="249dp"
+        tools:layout_editor_absoluteY="206dp"
+        tools:ignore="MissingConstraints"/>
+
+    <Button
+        android:id="@+id/readingBtn"
+        android:layout_width="135dp"
+        android:layout_height="50dp"
+        android:text="Reading"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="HardcodedText,MissingConstraints"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="@+id/paintingBtn"/>
+
+</android.support.constraint.ConstraintLayout>

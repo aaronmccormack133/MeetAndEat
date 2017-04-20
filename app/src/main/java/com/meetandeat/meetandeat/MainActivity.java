@@ -182,8 +182,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         user_profile_age.setText(age);
         String bio = intent.getStringExtra("Bio");
         user_profile_short_bio.setText(bio);
+
+
 */
+    defineButtons();
     }
+    public void defineButtons(){
+
+        findViewById( R.id.firstButton).setOnClickListener( buttonClickListener );
+        findViewById( R.id.secondButton ).setOnClickListener( buttonClickListener );
+        findViewById( R.id.thirdButton ).setOnClickListener( buttonClickListener );
+        findViewById( R.id.fourthButton ).setOnClickListener( buttonClickListener);
+
+    }
+
+
+
+    private View.OnClickListener buttonClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch(v.getId()){
+                case R.id.firstButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+                case R.id.secondButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+                case R.id.thirdButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+                case R.id.fourthButton:
+                    startActivity(new Intent( MainActivity.this, buttonActivity.class ));
+                    break;
+            }
+
+        }
+    };
+
 
     public class SamplePagerAdapter extends FragmentPagerAdapter {
         public SamplePagerAdapter(FragmentManager fragM) {
