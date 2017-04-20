@@ -14,23 +14,25 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
-import com.firebase.client.Firebase;
+import com.firebase.client.DataSnapshot;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DatabaseError;
 
 //http://blog.iamsuleiman.com/using-bottom-navigation-view-android-design-support-library/
 //https://github.com/1priyank1/BottomNavigation-Demo
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity{
+    private static final String TAG = "MainActivity";
     private ViewPager myPager;
     private BottomNavigationView bottomNavigationView;
     private MenuItem prevMenuItem;
@@ -44,39 +46,51 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private TextView user_profile_age;
     private String age;
     private ImageButton user_profile_photo;
-    private Firebase firebaseRef;
-    private FirebaseAuth firebaseAuth;
-    private DatabaseReference databaseReference;
+
+    private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference myRef;
+    private FirebaseDatabase mFirebaseDatabase;
+    private String userID;
     //Spinner
 
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
-        // Create an ArrayAdapter using the string array and a default spinner layout
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.hobbies_array, android.R.layout.simple_spinner_item);
-        // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner
-//        spinner.setAdapter(adapter);
+        mAuth = FirebaseAuth.getInstance();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        myRef = mFirebaseDatabase.getReference();
+        FirebaseUser user = mAuth.getCurrentUser();
+        userID = user.getUid();
 
-//        spinner.setOnItemSelectedListener( this );
+        mAuthListener = (new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if(user != null){
+                    Intent login = new Intent(MainActivity.this, Login.class);
+                    startActivity(login);
+                }
+            }
+        });
+/*
+//Not Working
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                showData(dataSnapshot);
+            }
 
-        //Firebase
-        firebaseAuth = FirebaseAuth.getInstance();
-        firebaseRef = new Firebase("https://meet-and-eat-163108.firebaseio.com/");
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-        if(firebaseAuth.getCurrentUser() == null){
-            startActivity(new Intent(this, Login.class));
-        }
-
-        FirebaseUser user = firebaseAuth.getCurrentUser();
-
+            }
+        });
+*/
         //Log Out Button
         logOutBtn = (Button) findViewById(R.id.logOutBtn);
 
@@ -136,55 +150,43 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //logOutBtn.setOnClickListener(this);
         myButton = (Button) findViewById(R.id.Button);
 
-        /*
-        //new spinner test
-        Spinner mySpinner = (Spinner) findViewById( R.id.spinner1 );
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<>( MainActivity.this,
-                android.R.layout.simple_list_item_1, getResources().getStringArray( R.array.hobbies) );
-        myAdapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        mySpinner.setAdapter( myAdapter );
-        /*
-
-
-
-
-        //Profile Spinner
-        /*
-        final String [] arr = {"Test", "Test2"};
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.fragment_profile, arr);
-        //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource( this,R.array.Hobbies,android.R.layout.simple_spinner_item );
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener( new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText( getApplicationContext(),parent.getItemAtPosition(position)+"selected", Toast.LENGTH_LONG ).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        } );*/
-
-        //Setting the name, bio and age to the profile.
-        //Email Edit
-        user_profile_name = (TextView) findViewById(R.id.user_profile_name);
-        user_profile_short_bio = (TextView) findViewById(R.id.user_profile_short_bio);
         user_profile_age = (TextView) findViewById(R.id.user_profile_age);
-/*
-        //Not Working
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("Name");
-        user_profile_name.setText(name);
-        String age = intent.getStringExtra("Age");
-        user_profile_age.setText(age);
-        String bio = intent.getStringExtra("Bio");
-        user_profile_short_bio.setText(bio);
-*/
+        user_profile_short_bio = (TextView) findViewById(R.id.user_profile_short_bio);
+        user_profile_name = (TextView) findViewById(R.id.user_profile_name);
+
     }
 
+    private void showData(DataSnapshot dataSnapshot){
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            UserInformation uInfo = new UserInformation();
+            uInfo.setUserInfoAge(ds.child(userID).getValue(UserInformation.class).getUserInfoAge());
+            uInfo.setUserInfoBio(ds.child(userID).getValue(UserInformation.class).getUserInfoBio());
+            uInfo.setUserInfoName(ds.child(userID).getValue(UserInformation.class).getUserInfoName());
+
+            Log.d(TAG, "showData: name: "+uInfo.getUserInfoName());
+            Log.d(TAG, "showData: age: "+uInfo.getUserInfoAge());
+            Log.d(TAG, "showData: bio: "+uInfo.getUserInfoBio());
+
+            user_profile_age.setText(uInfo.getUserInfoAge());
+            user_profile_short_bio.setText(uInfo.getUserInfoBio());
+            user_profile_name.setText(uInfo.getUserInfoName());
+        }
+    }
+/*
+    @Override
+    public void onStart(){
+        super.onStart();
+        mAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    public void onStop(){
+        super.onStop();
+        if(mAuthListener!=null){
+            mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+*/
     public class SamplePagerAdapter extends FragmentPagerAdapter {
         public SamplePagerAdapter(FragmentManager fragM) {
             super(fragM);
@@ -218,7 +220,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         startActivity(j);
     }
     public void logOutBtn(View view){
-        firebaseAuth.getInstance().signOut();
+        mAuth.getInstance().signOut();
         LoginManager.getInstance().logOut();
         finish();
         startActivity(new Intent(this, Login.class));
@@ -228,14 +230,4 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         startActivity(l);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
-        String sSelected=parent.getItemAtPosition(pos).toString();
-        Toast.makeText( this,sSelected,Toast.LENGTH_SHORT ).show();
-
-    }
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        // Another interface callback
-    }
 }

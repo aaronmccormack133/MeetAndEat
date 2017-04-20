@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bestone"
     tools:context="com.meetandeat.meetandeat.Login">
 
     <EditText
@@ -18,7 +20,8 @@
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textColorHint="#000000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        tools:ignore="HardcodedText"/>
 
     <EditText
         android:id="@+id/etPassword"
@@ -33,40 +36,42 @@
         android:inputType="textPassword"
         android:textAlignment="center"
         android:textColorHint="#000000"
-        android:textSize="20sp" />
+        android:textSize="20sp"
+        tools:ignore="HardcodedText"/>
 
     <Button
         android:id="@+id/bLogin"
         style="@android:style/Widget.Material.Button.Borderless"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_below="@+id/etPassword"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="19dp"
         android:elevation="24dp"
+        android:background="#fff"
         android:fontFamily="sans-serif"
         android:onClick="logInClick"
         android:text="Login"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_below="@+id/etPassword"
+        tools:ignore="HardcodedText,SpUsage"
+        android:layout_alignStart="@+id/etPassword"/>
 
     <Button
         android:id="@+id/registerBtn"
         style="@android:style/Widget.Material.Button.Borderless"
         android:layout_width="150dp"
-        android:layout_height="30dp"
+        android:layout_height="50dp"
+        android:layout_alignEnd="@+id/imageView"
         android:layout_alignTop="@+id/bLogin"
-        android:layout_toEndOf="@+id/bLogin"
+        android:background="#fff"
         android:elevation="24dp"
         android:fontFamily="sans-serif"
         android:onClick="openRegister"
         android:text="Register"
         android:textAlignment="center"
-        android:textColor="#000"
         android:textSize="18dp"
-        android:visibility="visible"
-        android:layout_alignBottom="@+id/bLogin" />
+        tools:ignore="HardcodedText,SpUsage" />
 
     <com.facebook.login.widget.LoginButton
         android:id="@+id/button"
@@ -83,5 +88,6 @@
         android:layout_height="213dp"
         app:srcCompat="@drawable/logo"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        tools:ignore="ContentDescription"/>
 </RelativeLayout>

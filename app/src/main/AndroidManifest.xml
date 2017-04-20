@@ -41,7 +41,7 @@
             android:value="@integer/google_play_services_version"/>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCf6Pl5YGywPOHtaG8XmbpdlRMZeZbjJKk"/>
+            android:value="AIzaSyA54FWVvosAOZ6W0wIxcQYVAXyBpi-TCVw"/>
 
         <activity android:name=".peopleSelection"/>
         <activity android:name=".EditProfileActivity">

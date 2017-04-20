@@ -34,7 +34,7 @@ public class EditProfileActivity extends AppCompatActivity implements View.OnCli
         setContentView(R.layout.activity_edit_profile );
 
         firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("loginInfo");
 
         user_profile_age_edit = (EditText) findViewById(R.id.user_profile_age_edit);
         user_profile_name_edit = (EditText) findViewById(R.id.user_profile_name_edit);

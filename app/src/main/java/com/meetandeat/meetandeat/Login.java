@@ -133,7 +133,9 @@ public class Login extends AppCompatActivity {
                                 catch (Exception e){
                                     e.printStackTrace();
                                 }
+                                startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                 finish();
+
                             }
                         }
                 );
@@ -206,16 +208,17 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                         }
                         else{
+                            /*
                             String uid = task.getResult().getUser().getUid();
                             String name = task.getResult().getUser().getDisplayName();
                             String email = task.getResult().getUser().getEmail();
-                            String image = task.getResult().getUser().getPhotoUrl().toString();
+                            //String image = task.getResult().getUser().getPhotoUrl().toString();
                             User user = new User(uid, name, email, null);
                             firebaseRef.child(uid).setValue(user);
-
+                            */
                             Intent intent = new Intent(getApplicationContext(), EditProfileActivity.class);
-                            intent.putExtra("user_id", uid);
-                            intent.putExtra("profile_picture", image);
+                            //intent.putExtra("user_id", uid);
+                            //intent.putExtra("profile_picture", image);
                             startActivity(intent);
                             finish();
                         }
